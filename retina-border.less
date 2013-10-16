@@ -1,0 +1,110 @@
+// Positions: all, top, right, bottom, left.
+
+.retina-border(@color, @position) when (@position = all){
+	border: 1px solid @color;
+
+	@media 
+		only screen and (-webkit-min-device-pixel-ratio: 2), 
+		only screen and (min--moz-device-pixel-ratio: 2), 
+		only screen and (-o-min-device-pixel-ratio: 2/1), 
+		only screen and (min-device-pixel-ratio: 2), 
+		only screen and (min-resolution: 192dpi), 
+		only screen and ( min-resolution: 2dppx){ 
+		  
+			border: none;
+
+			background-image: 
+				linear-gradient(0deg, @color, @color 50%, transparent 50%),
+				linear-gradient(90deg, @color, @color 50%, transparent 50%),
+				linear-gradient(0deg, transparent, transparent 50%, @color 50%),
+				linear-gradient(90deg, transparent, transparent 50%, @color 50%)
+			;
+
+			background-repeat: no-repeat;
+
+			background-position: bottom, left, top, right;
+
+			background-size: 
+				100% 1px, 
+				1px 100%,
+				100% 1px,
+				1px 100%
+			;
+	}
+}
+
+.retina-border(@color, @position) when (@position = top){
+	border-top: 1px solid @color;
+
+	@media 
+		only screen and (-webkit-min-device-pixel-ratio: 2), 
+		only screen and (min--moz-device-pixel-ratio: 2), 
+		only screen and (-o-min-device-pixel-ratio: 2/1), 
+		only screen and (min-device-pixel-ratio: 2), 
+		only screen and (min-resolution: 192dpi), 
+		only screen and ( min-resolution: 2dppx){ 
+		  
+			border: none;
+			background-image: linear-gradient(0deg, transparent, transparent 50%, @color 50%);
+			background-repeat: no-repeat;
+			background-position: top;
+			background-size: 100% 1px;
+	}
+}
+
+.retina-border(@color, @position) when (@position = right){
+		border-right: 1px solid @color;
+
+	@media 
+		only screen and (-webkit-min-device-pixel-ratio: 2), 
+		only screen and (min--moz-device-pixel-ratio: 2), 
+		only screen and (-o-min-device-pixel-ratio: 2/1), 
+		only screen and (min-device-pixel-ratio: 2), 
+		only screen and (min-resolution: 192dpi), 
+		only screen and ( min-resolution: 2dppx){ 
+		  
+			border: none;
+			background-image: linear-gradient(90deg, transparent, transparent 50%, @color 50%);
+			background-repeat: no-repeat;
+			background-position: right;
+			background-size: 1px 100%;
+	}
+}
+
+.retina-border(@color, @position) when (@position = bottom){
+		border-bottom: 1px solid @color;
+
+	@media 
+		only screen and (-webkit-min-device-pixel-ratio: 2), 
+		only screen and (min--moz-device-pixel-ratio: 2), 
+		only screen and (-o-min-device-pixel-ratio: 2/1), 
+		only screen and (min-device-pixel-ratio: 2), 
+		only screen and (min-resolution: 192dpi), 
+		only screen and ( min-resolution: 2dppx){ 
+		  
+			border: none;
+			background-image: linear-gradient(0deg, @color, @color 50%, transparent 50%);
+			background-repeat: no-repeat;
+			background-position: bottom;
+			background-size: 100% 1px;
+	}
+}
+
+.retina-border(@color, @position) when (@position = left){
+		border-left: 1px solid @color;
+
+	@media 
+		only screen and (-webkit-min-device-pixel-ratio: 2), 
+		only screen and (min--moz-device-pixel-ratio: 2), 
+		only screen and (-o-min-device-pixel-ratio: 2/1), 
+		only screen and (min-device-pixel-ratio: 2), 
+		only screen and (min-resolution: 192dpi), 
+		only screen and ( min-resolution: 2dppx){ 
+		  
+			border: none;
+			background-image: linear-gradient(90deg, @color, @color 50%, transparent 50%);
+			background-repeat: no-repeat;
+			background-position: left;
+			background-size: 1px 100%;
+	}
+}
